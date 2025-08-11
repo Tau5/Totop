@@ -1,10 +1,9 @@
-#include "include/library.h"
+#include "include/totop.h"
 
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
 #include <string.h>
-#include <openssl/sha.h>
 #include <openssl/evp.h>
 #include <openssl/hmac.h>
 
@@ -48,7 +47,7 @@ unsigned char* Totop_decode_base32(const char* input, int len, int* new_len) {
 }
 
 unsigned int Totop_topt_get_counter(int interval) {
-    return floor((time(NULL) - 0) / interval);
+    return floor(((double) time(NULL) - 0) / interval);
 }
 
 unsigned int Totop_get_code(enum TotopCrypt crypt, const unsigned char* key, int keylength, uint64_t counter, int code_digits) {

@@ -14,7 +14,7 @@ enum TotopCrypt {
  * @param key       Pointer to key
  * @param keylength length of pointer in bytes
  * @param counter   HOTP counter
- * @param digits     Digits in output code
+ * @param code_digits     Digits in output code
  *
  * @returns HOTP code
  */

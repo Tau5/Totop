@@ -3,7 +3,7 @@ project(totop C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(totop STATIC library.c)
+add_library(totop STATIC totop.c)
 target_include_directories(totop
         PUBLIC
         ${PROJECT_SOURCE_DIR}/include
