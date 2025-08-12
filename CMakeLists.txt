@@ -9,13 +9,13 @@ target_include_directories(totop
         ${PROJECT_SOURCE_DIR}/include
 )
 
-add_executable(totop_example
-        test.c
-)
-target_link_libraries(totop_example
-        PRIVATE totop
-        crypto
-        ssl
+find_package(OpenSSL REQUIRED)
+target_link_libraries(totop
+        PUBLIC
+        OpenSSL::SSL
+        OpenSSL::Crypto
         m
 )
+add_executable(totop_example test.c)
+target_link_libraries(totop_example PRIVATE totop)
 add_compile_options(-Wall)
