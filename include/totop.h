@@ -2,6 +2,10 @@
 #define TOTOP_LIBRARY_H
 #include <bits/stdint-uintn.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum TotopCrypt {
     TOTOP_SHA1 = 0,
     TOTOP_SHA256 = 1,
@@ -37,5 +41,9 @@ unsigned char* Totop_decode_base32(const char* input, int len, int* new_len);
  * @returns counter
  */
 unsigned int Totop_topt_get_counter(int interval);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //TOTOP_LIBRARY_H
